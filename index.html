@@ -61,6 +61,10 @@ nav a:hover,nav a[aria-current="page"]{color:var(--red)}
 
 .banner img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 
+/* trailer */
+.trailer{display:grid;gap:18px;justify-items:center;text-align:center}
+.trailer video{display:block;width:100%;max-width:880px;height:auto;aspect-ratio:16/9;border-radius:10px;background:#16212a;border:1px solid var(--rule)}
+.trailer p{color:var(--muted);max-width:60ch}
 /* subscribe strip */
 .strip{border-bottom:1px solid var(--rule)}
 .strip .wrap{padding-block:18px;display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap}
@@ -189,6 +193,15 @@ details p{margin-top:12px;color:var(--muted)}
     <span class="plat soon">YouTube</span>
     <span class="plat soon">RSS</span>
   </div></div>
+
+  <section class="sec"><div class="wrap trailer">
+    <span class="eyebrow">Watch the trailer</span>
+    <h2>A first look at the show</h2>
+    <video controls playsinline preload="metadata" poster="media/smwih-trailer-poster.jpg" width="1280" height="720">
+      <source src="media/smwih-trailer.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="media/smwih-trailer.mp4">Download the trailer</a>.
+    </video>
+  </div></section>
 
   <section class="sec"><div class="wrap">
     <span class="eyebrow">Latest episode</span>
@@ -364,6 +377,7 @@ const pages=['home','about','episodes','guests','subscribe','contact'];
 function route(){const v=location.hash.slice(1);const p=pages.includes(v)?v:'home';
  document.querySelectorAll('.view').forEach(m=>m.hidden=m.dataset.view!==p);
  document.querySelectorAll('[data-nav]').forEach(a=>(a.dataset.nav===p||(p.startsWith('episode-')&&a.dataset.nav==='episodes'))?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+ document.querySelectorAll('video').forEach(x=>x.pause());
  window.scrollTo(0,0);}
 addEventListener('hashchange',route);route();
 </script>
