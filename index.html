@@ -62,9 +62,8 @@ nav a:hover,nav a[aria-current="page"]{color:var(--red)}
 .banner img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 
 /* trailer */
-.trailer{display:grid;gap:18px;justify-items:center;text-align:center}
-.trailer video{display:block;width:100%;max-width:880px;height:auto;aspect-ratio:16/9;border-radius:10px;background:#16212a;border:1px solid var(--rule)}
-.trailer p{color:var(--muted);max-width:60ch}
+.play.on{cursor:pointer;opacity:1}.play.on:hover{background:var(--ink)}
+.ep .tvid{grid-column:1/-1;display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:8px;background:#16212a}
 /* subscribe strip */
 .strip{border-bottom:1px solid var(--rule)}
 .strip .wrap{padding-block:18px;display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap}
@@ -196,22 +195,25 @@ details p{margin-top:12px;color:var(--muted)}
 
   <section class="sec"><div class="wrap">
     <span class="eyebrow">Latest episode</span>
-    <div class="ep">
-      <svg class="epart" viewBox="0 0 300 300" role="img" aria-label="Show Me Where It Hurts, episode 1 coming soon">
+    <div class="ep ep-trailer">
+      <svg class="epart" viewBox="0 0 300 300" role="img" aria-label="Show Me Where It Hurts trailer">
         <rect width="300" height="300" rx="12" fill="#16212a"/>
         <text x="150" y="78" text-anchor="middle" fill="#ffffff" font-family="Permanent Marker, Comic Sans MS, cursive" font-size="27">SHOW ME</text>
         <text x="150" y="112" text-anchor="middle" fill="#ffffff" font-family="Permanent Marker, Comic Sans MS, cursive" font-size="27">WHERE IT</text>
         <text x="150" y="160" text-anchor="middle" fill="#e8322b" font-family="Permanent Marker, Comic Sans MS, cursive" font-size="46">HURTS</text>
         <path d="M30 200 H110 l8 -6 l8 10 l12 -36 l12 52 l10 -28 l8 8 H270" fill="none" stroke="#e8322b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="150" y="258" text-anchor="middle" fill="#f6c83e" font-family="Nunito, system-ui, sans-serif" font-weight="900" font-size="14" letter-spacing="2">EPISODE 1 · COMING SOON</text>
+        <text x="150" y="258" text-anchor="middle" fill="#f6c83e" font-family="Nunito, system-ui, sans-serif" font-weight="900" font-size="14" letter-spacing="2">OFFICIAL TRAILER</text>
       </svg>
       <div>
-        <span class="meta">Episode 1 · Coming soon</span>
-        <h3><a href="#episodes">Season one is recording now</a></h3>
-        <p>Subscribe and the first episode lands in your feed the day it drops.</p>
-        <div class="player" aria-label="Audio player"><button class="play" type="button" disabled aria-label="Play (available when the episode is published)"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M0 0L14 8L0 16Z" fill="currentColor"/></svg></button><div class="track"></div><small>Available at launch</small></div>
+        <span class="meta">Trailer · 2:11</span>
+        <h3>A first look at the show</h3>
+        <p>Season one is recording now. Here's a taste of what's coming.</p>
+        <div class="player" aria-label="Trailer player"><button class="play on" type="button" aria-label="Play the trailer"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M0 0L14 8L0 16Z" fill="currentColor"/></svg></button><div class="track"></div><small>2:11</small></div>
         <div class="row"><a class="btn red" href="#subscribe">Subscribe</a><a class="btn" href="#episodes">All episodes</a></div>
       </div>
+      <video class="tvid" controls playsinline preload="none" poster="media/smwih-trailer-poster.jpg" width="1280" height="720" hidden>
+        <source src="media/smwih-trailer.mp4" type="video/mp4">
+      </video>
     </div>
   </div></section>
 
@@ -271,13 +273,28 @@ details p{margin-top:12px;color:var(--muted)}
     <div class="prose"><p>Season one is being recorded now. Subscribe to hear the first episode the day it drops.</p></div>
     <div class="row" style="justify-content:center"><a class="btn red" href="#subscribe">Subscribe</a><a class="btn" href="#guests">Be a guest</a></div>
   </div></section>
-  <section class="sec soft"><div class="wrap trailer">
-    <span class="eyebrow">Trailer · 2:11</span>
-    <h2>A first look at the show</h2>
-    <video controls playsinline preload="metadata" poster="media/smwih-trailer-poster.jpg" width="1280" height="720">
-      <source src="media/smwih-trailer.mp4" type="video/mp4">
-      Your browser can't play this video. <a href="media/smwih-trailer.mp4">Download the trailer</a>.
-    </video>
+  <section class="sec"><div class="wrap">
+    <span class="eyebrow">Trailer</span>
+    <div class="ep ep-trailer">
+      <svg class="epart" viewBox="0 0 300 300" role="img" aria-label="Show Me Where It Hurts trailer">
+        <rect width="300" height="300" rx="12" fill="#16212a"/>
+        <text x="150" y="78" text-anchor="middle" fill="#ffffff" font-family="Permanent Marker, Comic Sans MS, cursive" font-size="27">SHOW ME</text>
+        <text x="150" y="112" text-anchor="middle" fill="#ffffff" font-family="Permanent Marker, Comic Sans MS, cursive" font-size="27">WHERE IT</text>
+        <text x="150" y="160" text-anchor="middle" fill="#e8322b" font-family="Permanent Marker, Comic Sans MS, cursive" font-size="46">HURTS</text>
+        <path d="M30 200 H110 l8 -6 l8 10 l12 -36 l12 52 l10 -28 l8 8 H270" fill="none" stroke="#e8322b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="150" y="258" text-anchor="middle" fill="#f6c83e" font-family="Nunito, system-ui, sans-serif" font-weight="900" font-size="14" letter-spacing="2">OFFICIAL TRAILER</text>
+      </svg>
+      <div>
+        <span class="meta">Trailer · 2:11</span>
+        <h3>A first look at the show</h3>
+        <p>Season one is recording now. Here's a taste of what's coming.</p>
+        <div class="player" aria-label="Trailer player"><button class="play on" type="button" aria-label="Play the trailer"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M0 0L14 8L0 16Z" fill="currentColor"/></svg></button><div class="track"></div><small>2:11</small></div>
+        <div class="row"><a class="btn red" href="#subscribe">Subscribe</a><a class="btn" href="#episodes">All episodes</a></div>
+      </div>
+      <video class="tvid" controls playsinline preload="none" poster="media/smwih-trailer-poster.jpg" width="1280" height="720" hidden>
+        <source src="media/smwih-trailer.mp4" type="video/mp4">
+      </video>
+    </div>
   </div></section>
 </main>
 
@@ -375,6 +392,7 @@ function route(){const v=location.hash.slice(1);const p=pages.includes(v)?v:'hom
  document.querySelectorAll('video').forEach(x=>x.pause());
  window.scrollTo(0,0);}
 addEventListener('hashchange',route);route();
+document.querySelectorAll('.ep-trailer').forEach(c=>{const v=c.querySelector('.tvid'),b=c.querySelector('.play.on');b.addEventListener('click',()=>{c.querySelector('.player').hidden=true;v.hidden=false;v.play();});});
 </script>
 
 </body>
